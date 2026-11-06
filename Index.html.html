@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Trendomart — Wear What’s Trending</title>
+<meta name="description" content="Discover trending fashion picks for men and women on Trendomart.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#19151f;--muted:#77717d;--pink:#ff4f8b;--orange:#ff9b45;--purple:#7655e8;--line:#eeeaf1;--bg:#fffafd}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font-family:"DM Sans",sans-serif}a{color:inherit;text-decoration:none}
+.top{background:#211a2b;color:white;text-align:center;padding:9px 12px;font-size:12px;letter-spacing:.3px}.top b{color:#ffb6cf}
+header{max-width:1180px;margin:auto;padding:20px 24px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.logo{font:800 29px Outfit,sans-serif;letter-spacing:-1.5px}.logo span{color:var(--pink)}
+nav{display:flex;gap:25px;font-size:14px;font-weight:700}nav a:hover{color:var(--pink)}
+.actions{display:flex;align-items:center;gap:12px}.search{border:1px solid var(--line);background:white;border-radius:30px;padding:11px 15px;width:205px;outline:none}
+.hero{max-width:1132px;margin:12px auto 34px;padding:55px 58px;border-radius:28px;min-height:340px;background:linear-gradient(115deg,#ffe0eb 0%,#f5eaff 52%,#ffe9d4 100%);display:grid;grid-template-columns:1.1fr .9fr;align-items:center;overflow:hidden;position:relative}
+.eyebrow{display:inline-block;background:white;border-radius:30px;padding:8px 13px;color:#b13b72;font-size:11px;font-weight:800;letter-spacing:1.1px}
+h1{font:800 clamp(38px,5vw,62px)/1.02 Outfit,sans-serif;letter-spacing:-2px;margin:18px 0 14px;max-width:530px}h1 em{font-style:normal;color:#e83f80}
+.hero p{color:#625866;line-height:1.7;max-width:440px;margin:0 0 24px}.primary{display:inline-block;background:var(--ink);color:white;border-radius:30px;padding:14px 22px;font-weight:800;font-size:13px}
+.hero-art{font-size:120px;text-align:center;filter:drop-shadow(0 18px 16px #b17a9a44);transform:rotate(-8deg)}
+.section{max-width:1132px;margin:0 auto 48px;padding:0 24px}.section-head{display:flex;align-items:end;justify-content:space-between;margin-bottom:20px}.section h2{font:700 28px Outfit,sans-serif;letter-spacing:-.7px;margin:0}.sub{color:var(--muted);font-size:13px;margin-top:5px}
+.pills{display:flex;gap:9px;flex-wrap:wrap;margin-bottom:22px}.pill{border:1px solid var(--line);background:white;border-radius:25px;padding:10px 17px;font-weight:700;font-size:12px;cursor:pointer}.pill.active,.pill:hover{background:#211a2b;color:white;border-color:#211a2b}
+.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}.card{background:white;border:1px solid #f0ebf1;border-radius:18px;overflow:hidden;transition:.2s}.card:hover{transform:translateY(-4px);box-shadow:0 12px 30px #24162a0d}
+.photo{height:230px;position:relative;background:#f3edf3;display:flex;align-items:center;justify-content:center;overflow:hidden}.photo img{width:100%;height:100%;object-fit:cover}.tag{position:absolute;top:12px;left:12px;background:white;padding:7px 10px;border-radius:20px;font-size:10px;font-weight:800}.heart{position:absolute;right:12px;top:10px;border:0;background:white;border-radius:50%;width:31px;height:31px;cursor:pointer;font-size:16px}
+.info{padding:14px}.category{font-size:10px;text-transform:uppercase;color:#a29aa5;font-weight:800;letter-spacing:.8px}.name{font-weight:800;font-size:14px;margin:7px 0 6px}.price{font-size:17px;font-weight:800}.old{font-size:11px;color:#9c959e;text-decoration:line-through;margin-left:6px}.market{font-size:11px;color:var(--muted);margin:7px 0 12px}.buy{display:block;text-align:center;background:#fff0f5;color:#c92d68;padding:11px;border-radius:10px;font-size:12px;font-weight:800}.buy:hover{background:var(--pink);color:white}
+.banner{background:#241d30;color:white;border-radius:22px;padding:27px 32px;display:flex;justify-content:space-between;align-items:center}.banner h3{font:700 24px Outfit;margin:0 0 6px}.banner p{color:#d2c9d8;font-size:13px;margin:0}.banner a{background:#ffb3cd;color:#51233a;padding:12px 18px;border-radius:25px;font-size:12px;font-weight:800}
+footer{background:#f4eff5;padding:32px 24px;text-align:center;color:#77717d;font-size:12px;line-height:1.8}.footlogo{font:800 23px Outfit;color:var(--ink);margin-bottom:6px}.footlogo span{color:var(--pink)}
+.notice{max-width:1132px;margin:-24px auto 30px;padding:0 24px;color:#8a818d;font-size:11px}
+@media(max-width:850px){nav{display:none}.hero{margin:8px 16px 28px;padding:35px 28px;grid-template-columns:1fr}.hero-art{display:none}.grid{grid-template-columns:repeat(2,1fr)}.search{width:145px}.section{padding:0 16px}}
+@media(max-width:480px){header{padding:16px}.logo{font-size:24px}.search{width:120px;padding:9px 11px}.hero{min-height:0;padding:32px 24px}h1{font-size:43px}.grid{gap:10px}.photo{height:190px}.info{padding:11px}.section h2{font-size:24px}.banner{padding:22px;display:block}.banner a{display:inline-block;margin-top:15px}}
+</style>
+</head>
+<body>
+<div class="top">FRESH FINDS, FRESH FITS ✦ <b>YOUR DAILY DOSE OF TRENDING STYLE</b></div>
+<header>
+  <a class="logo" href="#">trendo<span>mart.</span></a>
+  <nav><a href="#home">Home</a><a href="#shop" data-filter="Men">Men</a><a href="#shop" data-filter="Women">Women</a><a href="#trending">Trending</a></nav>
+  <div class="actions"><input class="search" id="search" placeholder="Search fashion..." aria-label="Search fashion"><span>♡</span></div>
+</header>
+<main id="home">
+<section class="hero">
+ <div><span class="eyebrow">THE STYLE EDIT · 2026</span><h1>Find your next<br><em>favourite fit.</em></h1><p>Fresh fashion finds, viral styles and everyday looks — all in one place. Discover it here, shop it at your favourite store.</p><a class="primary" href="#shop">Explore the collection&nbsp; →</a></div>
+ <div class="hero-art" aria-hidden="true">🛍️</div>
+</section>
+<div class="notice">Curated fashion picks. Prices and availability may change on the retailer’s app or website.</div>
+<section class="section" id="shop">
+ <div class="section-head"><div><h2>Shop the edit</h2><div class="sub">A little something for every style.</div></div></div>
+ <div class="pills" id="filters"><button class="pill active" data-filter="All">All styles</button><button class="pill" data-filter="Men">Men</button><button class="pill" data-filter="Women">Women</button><button class="pill" data-filter="Trending">Trending now</button></div>
+ <div class="grid" id="products"></div>
+</section>
+<section class="section" id="trending"><div class="banner"><div><h3>Spotted it. Loved it. Wear it.</h3><p>New trending picks are added to the edit regularly.</p></div><a href="#shop">Discover styles →</a></div></section>
+</main>
+<footer><div class="footlogo">trendo<span>mart.</span></div>Fashion discovery, made easy.<br>Trendomart is an independent affiliate discovery website and is not affiliated with Meesho, Flipkart or Amazon.<br>We may earn a commission when you shop through eligible links, at no extra cost to you.</footer>
+<script>
+/* DEMO CATALOGUE: replace image, price, marketplace and affiliateUrl with your approved product details. */
+const products=[
+ {name:"Oversized Streetwear Tee",category:"Men",price:"₹399",old:"₹799",market:"Meesho",tag:"TRENDING",image:"https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=700",affiliateUrl:""},
+ {name:"Everyday Minimal Shirt",category:"Men",price:"₹549",old:"₹999",market:"Flipkart",tag:"TOP PICK",image:"https://images.unsplash.com/photo-1598033129183-c4f50c736f10?w=700",affiliateUrl:""},
+ {name:"Chic Everyday Top",category:"Women",price:"₹449",old:"₹899",market:"Amazon",tag:"NEW FIND",image:"https://images.unsplash.com/photo-1551163943-3f6a855d1153?w=700",affiliateUrl:""},
+ {name:"Classic Denim Look",category:"Women",price:"₹699",old:"₹1,299",market:"Meesho",tag:"TRENDING",image:"https://images.unsplash.com/photo-1541099649105-f69ad21f3246?w=700",affiliateUrl:""},
+ {name:"Relaxed Fit T-Shirt",category:"Men",price:"₹299",old:"₹599",market:"Amazon",tag:"UNDER ₹300",image:"https://images.unsplash.com/photo-1503341504253-dff4815485f1?w=700",affiliateUrl:""},
+ {name:"Soft Pastel Outfit",category:"Women",price:"₹599",old:"₹1,099",market:"Flipkart",tag:"STYLE PICK",image:"https://images.unsplash.com/photo-1483985988355-763728e1935b?w=700",affiliateUrl:""},
+ {name:"Casual Layered Look",category:"Men",price:"₹799",old:"₹1,499",market:"Meesho",tag:"VIRAL STYLE",image:"https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=700",affiliateUrl:""},
+ {name:"Weekend Fashion Dress",category:"Women",price:"₹749",old:"₹1,399",market:"Amazon",tag:"NEW FIND",image:"https://images.unsplash.com/photo-1490481651871-ab68de25d43d?w=700",affiliateUrl:""}
+];
+let active="All";
+const root=document.getElementById("products");
+function render(){
+ const q=document.getElementById("search").value.toLowerCase();
+ const items=products.filter(p=>(active==="All"||active==="Trending"&&p.tag.includes("TREND")||p.category===active)&&(p.name+" "+p.category+" "+p.market).toLowerCase().includes(q));
+ root.innerHTML=items.map(p=>`<article class="card"><div class="photo"><img src="${p.image}" alt="${p.name}" onerror="this.style.display='none';this.parentElement.innerHTML+='👕'"><span class="tag">${p.tag}</span><button class="heart" aria-label="Save item" onclick="this.textContent=this.textContent==='♡'?'♥':'♡'">♡</button></div><div class="info"><div class="category">${p.category}</div><div class="name">${p.name}</div><div><span class="price">${p.price}</span><span class="old">${p.old}</span></div><div class="market">Find it on ${p.market}</div><a class="buy" href="${p.affiliateUrl||'#'}" ${p.affiliateUrl?'target="_blank" rel="sponsored noopener"':'onclick="event.preventDefault();alert(\\'Add your approved affiliate URL to this product in the website file first.\\')"'}>View deal&nbsp; ↗</a></div></article>`).join("")||"<p>No styles found. Try another search.</p>";
+}
+document.querySelectorAll("[data-filter]").forEach(b=>b.addEventListener("click",()=>{active=b.dataset.filter;document.querySelectorAll(".pill").forEach(x=>x.classList.toggle("active",x.dataset.filter===active));render()}));
+document.getElementById("search").addEventListener("input",render);render();
+</script>
+</body></html>
